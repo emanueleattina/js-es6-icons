@@ -33,9 +33,9 @@
 main .container {
     background-color: #d0e1e4;
     display: flex;
-    justify-content: space-between;
     padding: 15px;
     flex-wrap: wrap;
+    justify-content:start
 }
 
 .icon-container {
@@ -68,4 +68,8 @@ main .container {
 
 .user {
     color: #7a2dad;
+}
+
+.hide {
+    display: none;
 }
