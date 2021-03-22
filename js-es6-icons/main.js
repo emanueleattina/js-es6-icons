@@ -129,9 +129,10 @@ icons.forEach(item => {
 
 function filterIcons() {
     var selectedIcon = $('#type').val();
-    var selector = $(this).parents('select').parents('.navbar-bottom').parents('header').siblings('main').children('.container');
+    var selector = $(this).parent('select').parent('.navbar-bottom').parent('header').siblings('main').children('.container');
 
     if (selectedIcon == 'animal') {
+        selector.children('div#animal').show();
         selector.children('div#user').hide();
         selector.children('div#vegetable').hide();
         console.log(selectedIcon);
@@ -139,6 +140,7 @@ function filterIcons() {
 
     else if (selectedIcon == 'vegetable') {
         selector.children('div#animal').hide();
+        selector.children('div#vegetable').show();
         selector.children('div#user').hide();
         console.log(selectedIcon);
     }
@@ -146,6 +148,13 @@ function filterIcons() {
     else if (selectedIcon == 'user') {
         selector.children('div#animal').hide();
         selector.children('div#vegetable').hide();
+        selector.children('div#user').show();
         console.log(selectedIcon);
+    }
+
+    else if (selectedIcon == 'all') {
+        selector.children('div#animal').show();
+        selector.children('div#vegetable').show();
+        selector.children('div#user').show();
     }
 }
