@@ -97,11 +97,55 @@ const icons = [
 	}
 ];
 
-// MILESTONE 1
-// mostrare in pagina tutte le icone disponibili
+icons.forEach(item => {
 
-var myClone = $('.icon-container').clone();
+    if (item.type === 'animal') {
+        $('.container').append(
+            `<div id="animal" class="icon-container">
+                <i class="${item.family} ${item.prefix}${item.name} animal"></i>
+                <span>${item.name}</span>
+            </div>`
+        );
+    }
 
-icons.forEach(icon => {
-    
+    else if (item.type === 'vegetable') {
+        $('.container').append(
+            `<div id="vegetable" class="icon-container">
+                <i class="${item.family} ${item.prefix}${item.name} vegetable"></i>
+                <span>${item.name}</span>
+            </div>`
+        );
+    }
+
+    else if (item.type === 'user') {
+        $('.container').append(
+            `<div id="user" class="icon-container">
+                <i class="${item.family} ${item.prefix}${item.name} user"></i>
+                <span>${item.name}</span>
+            </div>`
+        );
+    }
 });
+
+function filterIcons() {
+    var selectedIcon = $('#type').val();
+    var selector = $(this).parents('select').parents('.navbar-bottom').parents('header').siblings('main').children('.container');
+
+    if (selectedIcon == 'animal') {
+        selector.children('div#user').hide();
+        selector.children('div#vegetable').hide();
+        console.log(selectedIcon);
+    }
+
+    else if (selectedIcon == 'vegetable') {
+        selector.children('div#animal').hide();
+        selector.children('div#user').hide();
+        console.log(selectedIcon);
+    }
+
+    else if (selectedIcon == 'user') {
+        selector.children('div#animal').hide();
+        selector.children('div#vegetable').hide();
+        console.log(selectedIcon);
+    }
+}

@@ -45,13 +45,27 @@ main .container {
     box-shadow: 2px 2px 2px #686868;
     flex-direction: column;
     align-items: center;
-    display: none;
+    display: flex;
+    width: 18%;
+    margin-bottom: 25px;
 }
 
 .icon-container i {
     font-size: 30px;
 }
 
-.flex {
-    display: flex;
+.icon-container span {
+    margin-top: 5px;
+}
+
+.animal {
+    color: #2d60ad;
+}
+
+.vegetable {
+    color: #f78400;
+}
+
+.user {
+    color: #7a2dad;
 }
