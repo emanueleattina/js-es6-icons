@@ -35,7 +35,7 @@ main .container {
     display: flex;
     padding: 15px;
     flex-wrap: wrap;
-    justify-content:start
+    justify-content: space-between;
 }
 
 .icon-container {
