@@ -158,4 +158,3 @@ function filterIcons() {
         $('.user').show();
     }
 }
-
